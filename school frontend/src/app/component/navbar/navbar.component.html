@@ -1,0 +1,433 @@
+<!--navbar/toolbar-->
+<p>
+  <mat-toolbar class="toolbar fixed-top">
+    <div class="dropdown">
+      <!--sidenav sm size for button toggle-->
+      <button
+        mat-icon-button
+        class="example-icon dropdown-toggle d-md-none d-block"
+        data-toggle="dropdown"
+        aria-label="Example icon-button with menu icon"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <div class="dropdown-menu">
+        <div style="text-align: center" class="dropdown-item">
+          <img id="pro" src="{{ photo }}" />
+          <div>{{ name }}</div>
+        </div>
+        <div id="item1" class="dropdown-item" routerLink="/component/navbar/">
+          <span><img class="img-icon" src="assets/s3.jpg" /></span>Home
+        </div>
+        <div
+          id="item1"
+          class="dropdown-item"
+          routerLink="/component/navbar/notes"
+        >
+          <span><img class="img-icon" src="assets/studying.png" /></span>Notes
+        </div>
+        <div
+          id="item1"
+          class="dropdown-item"
+          routerLink="/component/navbar/homework"
+        >
+          <span><img class="img-icon" src="assets/classroom.png" /></span
+          >HomeWork
+        </div>
+        <div
+          id="item1"
+          class="dropdown-item"
+          routerLink="/component/navbar/notice"
+        >
+          <span><img class="img-icon" src="assets/announcement.png" /></span
+          >Notice
+        </div>
+        <div
+          id="item1"
+          class="dropdown-item"
+          routerLink="/component/navbar/test"
+        >
+          <span><img class="img-icon" src="assets/quiz.png" /></span>Test
+        </div>
+        <div
+          id="item1"
+          class="dropdown-item"
+          routerLink="/component/navbar/mark"
+        >
+          <span><img class="img-icon" src="assets/coffee.png" /></span>Mark
+        </div>
+        <div
+          id="item1"
+          class="dropdown-item"
+          routerLink="/component/navbar/home"
+        >
+          <span><img class="img-icon" src="assets/scheduling.png" /></span
+          >Online Classes
+        </div>
+      </div>
+    </div>
+    <button
+      mat-icon-button
+      class="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon"
+    >
+      <mat-icon>home</mat-icon>
+    </button>
+    <span>School Name</span>
+    <span class="example-spacer"></span>
+    <button
+      mat-icon-button
+      class="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon"
+    >
+      <mat-icon>chat</mat-icon>
+    </button>
+    <!--profile dropdoun  start-->
+    <div class="dropdown">
+      <button
+        mat-icon-button
+        class="example-icon dropdown-toggle"
+        data-toggle="dropdown"
+        aria-label="Example icon-button with menu icon"
+      >
+        <mat-icon>assignment_ind</mat-icon>
+      </button>
+      <div class="dropdown-menu dropdown-menu-right">
+        <div class="dropdown-item" style="text-align: center">
+          <div>
+            <img src="{{ photo }}" id="pro" />
+          </div>
+          <li class="dropdown-item">{{ name }}</li>
+        </div>
+        <hr />
+
+        <div class="dropdown-item">Address:-{{ address }}</div>
+
+        <li class="dropdown-item">Std.{{ std }} - {{ division }}</li>
+        <li class="dropdown-item">Roll No. {{ rollno }}</li>
+        <li class="dropdown-item">email: {{ email }}</li>
+        <li class="dropdown-item">mobile: {{ mobile }}</li>
+        <li class="dropdown-item">
+          <button
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-target="#myModal"
+            style="float: right"
+          >
+            edit
+          </button>
+        </li>
+      </div>
+    </div>
+  </mat-toolbar>
+</p>
+<!--sidenav start-->
+<div class="container1">
+  <div class="row">
+    <div class="col-md-2 d-none d-md-block" id="side">
+      <div style="text-align: center">
+        <img id="profile" src="{{ photo }}" />
+        <div>{{ name }}</div>
+      </div>
+
+      <div id="item" routerLink="/component/navbar/">
+        <span><img class="img-icon" src="assets/s3.jpg" /></span>Home
+      </div>
+      <div id="item" routerLink="/component/navbar/notes">
+        <span><img class="img-icon" src="assets/studying.png" /></span>Notes
+      </div>
+      <div id="item" routerLink="/component/navbar/homework">
+        <span><img class="img-icon" src="assets/classroom.png" /></span>HomeWork
+      </div>
+      <div id="item" routerLink="/component/navbar/notice">
+        <span><img class="img-icon" src="assets/announcement.png" /></span
+        >Notice
+      </div>
+      <div id="item" routerLink="/component/navbar/test">
+        <span><img class="img-icon" src="assets/quiz.png" /></span>Test
+      </div>
+      <div id="item" routerLink="/component/navbar/mark">
+        <span><img class="img-icon" src="assets/coffee.png" /></span>Mark
+      </div>
+      <div id="item" routerLink="/component/navbar/home">
+        <span><img class="img-icon" src="assets/scheduling.png" /></span>Online
+        Classes
+      </div>
+    </div>
+    <!--router start-->
+    <div class="col-md-10 offset-md-2 col-12 side2">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+<!--modal-->
+
+<!--register toggle modal-->
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body">
+        <form [formGroup]="signupForm" (ngSubmit)="onSignup()">
+          <div class="col-md-8 offset-md-2" id="loginn">
+            <h3 id="reg">Register</h3>
+            <div class="form-group">
+              <div class="controls">
+                <label id="labell"
+                  >User Standard:<span class="lblError">*</span></label
+                >
+                <input
+                  id="inputt"
+                  type="number"
+                  formControlName="std"
+                  placeholder="Your answer"
+                />
+                <p
+                  id="pp"
+                  *ngIf="
+                    signupForm.get('std').hasError('required') &&
+                    !signupForm.get('std').pristine
+                  "
+                  class="lblError"
+                >
+                  User standard is required
+                </p>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="controls">
+                <label id="labell"
+                  >User Division:<span class="lblError">*</span></label
+                ><br /><br />
+                <select
+                  id="selectt"
+                  formControlName="division"
+                  class="form-control"
+                >
+                  <option value="A">A</option>
+                  <option value="B">B</option>
+                  <option value="C">C</option>
+                </select>
+                <p
+                  id="pp"
+                  *ngIf="
+                    signupForm.get('division').hasError('required') &&
+                    !signupForm.get('division').pristine
+                  "
+                  class="lblError"
+                >
+                  user division is required
+                </p>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="controls">
+                <label id="labell"
+                  >User Name:<span class="lblError">*</span></label
+                >
+                <input
+                  id="inputt"
+                  type="text"
+                  formControlName="name"
+                  placeholder="Your answer"
+                />
+                <p
+                  id="pp"
+                  *ngIf="
+                    signupForm.get('name').hasError('required') &&
+                    !signupForm.get('name').pristine
+                  "
+                  class="lblError"
+                >
+                  User Name is required
+                </p>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="controls">
+                <label id="labell"
+                  >User Address:<span class="lblError">*</span></label
+                >
+                <input
+                  id="inputt"
+                  type="text"
+                  formControlName="address"
+                  placeholder="Your answer"
+                />
+                <p
+                  id="pp"
+                  *ngIf="
+                    signupForm.get('address').hasError('required') &&
+                    !signupForm.get('address').pristine
+                  "
+                  class="lblError"
+                >
+                  User address is required
+                </p>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="controls">
+                <label id="labell"
+                  >User Roll No:<span class="lblError">*</span></label
+                >
+                <input
+                  id="inputt"
+                  type="number"
+                  formControlName="rollno"
+                  placeholder="Your answer"
+                />
+                <p
+                  id="pp"
+                  *ngIf="
+                    signupForm.get('rollno').hasError('required') &&
+                    !signupForm.get('rollno').pristine
+                  "
+                  class="lblError"
+                >
+                  User rollno is required
+                </p>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="controls">
+                <label
+                  >User Date of Birth:<span class="lblError">*</span></label
+                >
+                <input
+                  id="inputt"
+                  type="date"
+                  formControlName="dob"
+                  placeholder="Your answer"
+                />
+                <p
+                  id="pp"
+                  *ngIf="
+                    signupForm.get('dob').hasError('required') &&
+                    !signupForm.get('dob').pristine
+                  "
+                  class="lblError"
+                >
+                  User dob is required
+                </p>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="controls">
+                <label id="labell"
+                  >User Mobile No:<span class="lblError">*</span></label
+                >
+                <input
+                  id="inputt"
+                  type="phone"
+                  formControlName="mobile"
+                  placeholder="Your answer"
+                />
+                <p
+                  id="pp"
+                  *ngIf="
+                    signupForm.get('mobile').hasError('required') &&
+                    !signupForm.get('mobile').pristine
+                  "
+                  class="lblError"
+                >
+                  User mobile is required
+                </p>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="controls">
+                <label id="labell"
+                  >User Email:<span class="lblError">*</span></label
+                >
+                <input
+                  id="inputt"
+                  type="email"
+                  formControlName="email"
+                  placeholder="Your answer"
+                />
+                <p
+                  id="pp"
+                  *ngIf="
+                    signupForm.get('email').hasError('required') &&
+                    !signupForm.get('email').pristine
+                  "
+                  class="lblError"
+                >
+                  User email is required
+                </p>
+                <p
+                  id="pp"
+                  *ngIf="
+                    signupForm.get('email').hasError('email') &&
+                    !signupForm.get('email').pristine
+                  "
+                  class="lblError"
+                >
+                  enter email proper
+                </p>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="controls">
+                <label id="labell"
+                  >User Photo:<span class="lblError">*</span></label
+                ><br /><br />
+                <input
+                  id="inputt"
+                  type="file"
+                  formControlName="photo"
+                  placeholder="choose your photo"
+                  accept="image/*"
+                  (change)="onchange($event)"
+                /><span> <img id="imggg" [src]="imgSrc" /></span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="controls">
+                <label id="labell"
+                  >Create Password:<span class="lblError">*</span></label
+                >
+                <input
+                  id="inputt"
+                  type="text"
+                  formControlName="password"
+                  placeholder="Your answer"
+                />
+                <p
+                  id="pp"
+                  *ngIf="
+                    signupForm.get('password').hasError('required') &&
+                    !signupForm.get('password').pristine
+                  "
+                  class="lblError"
+                >
+                  Create password is required
+                </p>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                id="btn1"
+                class="btn btn-success"
+                type="submit"
+                [disabled]="signupForm.invalid"
+              >
+                <!--[disabled]="signupForm.invalid"-->
+                Save
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

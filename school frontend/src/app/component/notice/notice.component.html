@@ -1,0 +1,40 @@
+<div class="container2">
+  <h1>Notice</h1>
+  <div class="row" id="Notice" *ngFor="let item of arrNotice">
+    <div class="col-md-8 offset-md-1 col-7">
+      <p style="padding: 4%">
+        {{ item.note }}
+      </p>
+      <p style="float: right">{{ item.givendate }}</p>
+    </div>
+    <div class="col-md-2 col-5" id="ii">
+      <img
+        id="noticeimg"
+        src="{{ item.img }}"
+        data-toggle="modal"
+        data-target="#myModall"
+      />
+    </div>
+
+    <div class="modal fade" id="myModall" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-body">
+            <img
+              id="noticeimg"
+              src="{{ item.img }}"
+              data-toggle="modal"
+              data-target="#myModall"
+            />
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,191 @@
+<form [formGroup]="signupForm" (ngSubmit)="onSignup()">
+  <div class="col-md-8 offset-md-2" id="loginn">
+    <h3>Register</h3>
+    <div class="form-group">
+      <div class="controls">
+        <label>User Standard:<span class="lblError">*</span></label>
+        <input type="number" formControlName="std" placeholder="Your answer" />
+        <p
+          *ngIf="
+            signupForm.get('std').hasError('required') &&
+            !signupForm.get('std').pristine
+          "
+          class="lblError"
+        >
+          User standard is required
+        </p>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="controls">
+        <label>User Division:<span class="lblError">*</span></label
+        ><br /><br />
+        <select formControlName="division" class="form-control">
+          <option value="" disabled>Choose Division...</option>
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+        </select>
+        <p
+          *ngIf="
+            signupForm.get('division').hasError('required') &&
+            !signupForm.get('division').pristine
+          "
+          class="lblError"
+        >
+          user division is required
+        </p>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="controls">
+        <label>User Name:<span class="lblError">*</span></label>
+        <input type="text" formControlName="name" placeholder="Your answer" />
+        <p
+          *ngIf="
+            signupForm.get('name').hasError('required') &&
+            !signupForm.get('name').pristine
+          "
+          class="lblError"
+        >
+          User Name is required
+        </p>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="controls">
+        <label>User Address:<span class="lblError">*</span></label>
+        <input
+          type="text"
+          formControlName="address"
+          placeholder="Your answer"
+        />
+        <p
+          *ngIf="
+            signupForm.get('address').hasError('required') &&
+            !signupForm.get('address').pristine
+          "
+          class="lblError"
+        >
+          User address is required
+        </p>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="controls">
+        <label>User Roll No:<span class="lblError">*</span></label>
+        <input
+          type="number"
+          formControlName="rollno"
+          placeholder="Your answer"
+        />
+        <p
+          *ngIf="
+            signupForm.get('rollno').hasError('required') &&
+            !signupForm.get('rollno').pristine
+          "
+          class="lblError"
+        >
+          User rollno is required
+        </p>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="controls">
+        <label>User Date of Birth:<span class="lblError">*</span></label>
+        <input type="date" formControlName="dob" placeholder="Your answer" />
+        <p
+          *ngIf="
+            signupForm.get('dob').hasError('required') &&
+            !signupForm.get('dob').pristine
+          "
+          class="lblError"
+        >
+          User dob is required
+        </p>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="controls">
+        <label>User Mobile No:<span class="lblError">*</span></label>
+        <input
+          type="phone"
+          formControlName="mobile"
+          placeholder="Your answer"
+        />
+        <p
+          *ngIf="
+            signupForm.get('mobile').hasError('required') &&
+            !signupForm.get('mobile').pristine
+          "
+          class="lblError"
+        >
+          User mobile is required
+        </p>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="controls">
+        <label>User Email:<span class="lblError">*</span></label>
+        <input type="email" formControlName="email" placeholder="Your answer" />
+        <p
+          *ngIf="
+            signupForm.get('email').hasError('required') &&
+            !signupForm.get('email').pristine
+          "
+          class="lblError"
+        >
+          User email is required
+        </p>
+        <p
+          *ngIf="
+            signupForm.get('email').hasError('email') &&
+            !signupForm.get('email').pristine
+          "
+          class="lblError"
+        >
+          enter email proper
+        </p>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="controls">
+        <label>User Photo:<span class="lblError">*</span></label
+        ><br /><br />
+        <input
+          type="file"
+          formControlName="photo"
+          placeholder="choose your photo"
+          accept="image/*"
+          (change)="onchange($event)"
+        /><span> <img [src]="imgSrc" /></span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="controls">
+        <label>Create Password:<span class="lblError">*</span></label>
+        <input
+          type="text"
+          formControlName="password"
+          placeholder="Your answer"
+        />
+        <p
+          *ngIf="
+            signupForm.get('password').hasError('required') &&
+            !signupForm.get('password').pristine
+          "
+          class="lblError"
+        >
+          Create password is required
+        </p>
+      </div>
+    </div>
+
+    <button id="btn1" type="submit" [disabled]="signupForm.invalid">
+      <!--[disabled]="signupForm.invalid"-->
+      Submit
+    </button>
+    <button id="btn2" routerLink="/">Back to Login</button>
+  </div>
+</form>

@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="col-md-8 offset-md-2" id="loginn">
+    <p>Login</p>
+    <div>
+      <label>User Mobile:</label>
+      <input type="phone" [(ngModel)]="a" required />
+    </div>
+    <div>
+      <label>User Password:</label>
+      <input type="password" [(ngModel)]="b" required />
+    </div>
+    <br />
+    <button id="btn1" (click)="login()">Login</button>
+    <button id="btn2" routerLink="/component/register">Register here</button>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+input {
+  padding: 2%;
+  margin: 2%;
+  width: 90%;
+  border: 2px solid rgb(212, 204, 204);
+
+  /* text-align: center; */
+}
+p {
+  color: #00acc1;
+  font-size: 4rem;
+}
+label {
+  /* color: white; */
+  float: left;
+  font-family: Comic Sans MS;
+  font-weight: bold;
+}
+.container {
+  padding: 5%;
+}
+#loginn {
+  /* background-color: rgb(10, 10, 53); */
+  text-align: center;
+  height: 30rem;
+
+  /* padding: 5%; */
+}
+#btn1 {
+  padding: 2%;
+  font-weight: bold;
+  border: none;
+  background-color: #f50057;
+  color: white;
+  padding-left: 5%;
+  padding-right: 5%;
+  text-align: center;
+  width: 97%;
+}
+#btn1:hover {
+  background-color: teal;
+}
+#btn2:hover {
+  color: blue;
+}
+#btn2 {
+  padding: 2%;
+  font-weight: bold;
+  border-bottom: 1px solid grey;
+  border: none;
+  background-color: white;
+  /* color: white; */
+  padding-left: 5%;
+  padding-right: 5%;
+  text-align: center;
+  margin-left: 70%;
+}

@@ -1,0 +1,133 @@
+#item {
+  width: 109%;
+  padding: 4%;
+  padding-left: 7%;
+  border: 1px solid grey;
+  background-color: #80d8ff;
+  /* background-color: rgb(53, 52, 52); */
+}
+#item1 {
+  width: 100%;
+  padding: 4%;
+  padding-left: 7%;
+  border: 1px solid grey;
+  background-color: #80d8ff;
+  /* background-color: rgb(53, 52, 52); */
+}
+.img-icon {
+  width: 27%;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+.toolbar {
+  background-color: rgb(2, 1, 44);
+  color: white;
+  /* position: fixed; */
+  /* position: sticky; */
+}
+#side {
+  /* background-color: violet; */
+  position: fixed;
+  /* margin-top: 3.4%; */
+  margin-top: 48px;
+  /* position: sticky; */
+}
+.side2 {
+  margin-top: 48px;
+  /* background-color: violet; */
+
+  /* position: fixed; */
+  /* color: white; */
+  /* padding: 2%; */
+}
+.container1 {
+  margin-right: 1.1%;
+}
+#pro {
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+}
+/* li {
+  font-size: 15px;
+} */
+#profile {
+  height: 90px;
+  width: 100px;
+  margin-top: 1%;
+  border-radius: 50%;
+}
+
+/* register */
+#inputt {
+  padding: 1%;
+  margin: 1%;
+  width: 90%;
+  border: 2px solid rgb(212, 204, 204);
+
+  /* text-align: center; */
+}
+#selectt {
+  width: 40%;
+}
+#reg {
+  color: #00acc1;
+  font-size: 4rem;
+}
+.lblError {
+  color: red;
+}
+
+#labell {
+  /* color: white; */
+  float: left;
+  font-family: Comic Sans MS;
+  font-weight: bold;
+}
+.container {
+  padding: 5%;
+}
+#loginn {
+  /* background-color: rgb(10, 10, 53); */
+  text-align: center;
+  height: 30rem;
+
+  padding-left: 10%;
+  padding-right: 10%;
+}
+#pp {
+  float: right;
+}
+#btn1 {
+  padding: 2%;
+  font-weight: bold;
+  border: none;
+  background-color: #f50057;
+  color: white;
+  padding-left: 5%;
+  padding-right: 5%;
+  text-align: center;
+  margin: 1%;
+}
+#btn1:hover,
+#btn2:hover {
+  background-color: teal;
+}
+#btn2 {
+  padding: 2%;
+  font-weight: bold;
+  border: none;
+  background-color: #f59f00;
+  color: white;
+  padding-left: 5%;
+  padding-right: 5%;
+  text-align: center;
+  margin: 1%;
+}
+
+#imggg {
+  height: 30%;
+  width: 30%;
+}
