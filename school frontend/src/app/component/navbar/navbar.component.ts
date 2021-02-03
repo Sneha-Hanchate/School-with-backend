@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ServicesService } from '../services.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Reg } from '../register/reg';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
 import {
   FormGroup,
   FormControl,

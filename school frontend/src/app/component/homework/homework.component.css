@@ -1,0 +1,27 @@
+.container3 {
+  background-color: aqua;
+  padding: 3%;
+}
+#inputhomework {
+  width: 60%;
+  padding: 2%;
+  border: none;
+  border-bottom: 2px solid blue;
+  margin: 2%;
+}
+#inputhomework:hover {
+  border: none;
+  border-bottom: 2px solid blue;
+}
+#btn3 {
+  width: 20%;
+  padding: 2%;
+  margin: 2%;
+  border: none;
+}
+#given {
+  color: green;
+}
+#end {
+  color: red;
+}

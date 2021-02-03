@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { arrRouting } from './app.routing';
+// import { materialModule } from'@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -28,12 +30,14 @@ import { HomeComponent } from './component/home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
+
     NavbarComponent,
     RegisterComponent,
     LoginComponent,
     NotesComponent,
-    HomeworkComponent,
     TestComponent,
+    HomeworkComponent,
+    NoticeComponent,
     NoticeComponent,
     MarkComponent,
     HomeComponent,
@@ -43,14 +47,15 @@ import { HomeComponent } from './component/home/home.component';
     AppRoutingModule,
     FormsModule,
     RouterModule,
+    ReactiveFormsModule,
 
     HttpClientModule,
-    ReactiveFormsModule,
     BrowserAnimationsModule,
     MatIconModule,
     MatSidenavModule,
     MatToolbarModule,
     MatButtonModule,
+    MatCardModule,
     arrRouting,
   ],
   providers: [],
